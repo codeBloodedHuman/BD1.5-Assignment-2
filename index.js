@@ -42,14 +42,14 @@ app.get('/total-return-percentage', (req, res) => {
 });
 
 //Endpoint 5
-app.get('/total-return-percentage', (req, res) => {
-  let stock1 = parseFloat(req.query.stock1);
-  let stock2 = parseFloat(req.query.stock2);
-  let stock3 = parseFloat(req.query.stock3);
-  let stock4 = parseFloat(req.query.stock4);
-  let returns = stock1 + stock2 + stock3 + stock4;
+app.get('/status', (req, res) => {
+  let returnPercentage = parseFloat(req.query.returnPercentage);
+  let returns = '';
+  if (returnPercentage > 0) returns = 'Profit';
+  else returns = 'Loss';
   res.send(returns.toString());
 });
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

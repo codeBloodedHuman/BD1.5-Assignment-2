@@ -28,7 +28,7 @@ app.get('/total-returns', (req, res) => {
 });
 
 //Endpoint 3
-app.get('/ calculate-return-percentage', (req, res) => {
+app.get('/calculate-return-percentage', (req, res) => {
   let boughtAt = parseFloat(req.query.boughtAt);
   let returns = parseFloat(req.query.returns);
   let returnPercentage = (returns / boughtAt) * 100;

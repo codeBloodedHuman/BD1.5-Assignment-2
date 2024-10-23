@@ -4,6 +4,8 @@ const { resolve } = require('path');
 const app = express();
 const port = 3010;
 
+app.use(cors());
+
 //Endpoint 1
 app.get('/calculate-returns', (req, res) => {
   let boughtAt = parseFloat(req.query.boughtAt);
